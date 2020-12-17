@@ -128,6 +128,7 @@ MonoBehaviour:
   damage: 30
   speed: 4
   impact: {fileID: 8916375925234759581, guid: d646a1cda6b624dff83c8b3ef4b6c31b, type: 3}
+  tower: {fileID: 0}
   collisionBaseGround: 1
 --- !u!82 &7771819093502698645
 AudioSource:

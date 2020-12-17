@@ -4,14 +4,17 @@ using UnityEngine;
 
 public abstract class TowerLook : Tower
 {
+    public float view = 1.5f;
+
     public float rotSpeed = 5;
     public float viewAngle = 5f;
+    public float anticipation = 0;
 
     public Transform[] rotsY, rotsX, firePoints;
     protected Transform rotY, rotX, firePoint;
 
     Enemy target;
-
+    Vector3 lookPoint;
 
 
 
@@ -26,11 +29,14 @@ public abstract class TowerLook : Tower
     protected virtual void Update()
     {
         target = null;
-        Vector3 lookPoint = transform.position + 10 * transform.forward;
+        lookPoint = transform.position + 10 * transform.forward;
 
         if (WaveMan.inWave) {
             target = SearchEnemy();
-            if (target) { lookPoint = target.gravity.position; }
+            if (target) {
+                Vector3 anticip = anticipation * target.speed * Tool.Dist(target.gravity, gravity) * target.transform.forward;
+                lookPoint = target.gravity.position + anticip;
+            }
         }
 
         else if (!hologram && GrabMan.inst.tower != this) {
@@ -46,6 +52,18 @@ public abstract class TowerLook : Tower
         if (target && Vector3.Angle(firePoint.forward, Tool.Dir(firePoint, lookPoint)) < viewAngle)
              Attack();
         else NoAttack();
+    }
+
+
+
+
+    protected Enemy SearchEnemy()
+    {
+        Enemy enemy;
+        float dist;
+        (enemy, dist) = Enemy.GetClosest(gravity.position);
+        if (enemy && dist < view) return enemy;
+        else return null;
     }
 
 

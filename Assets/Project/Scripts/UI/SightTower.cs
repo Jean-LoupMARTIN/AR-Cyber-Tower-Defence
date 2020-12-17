@@ -7,13 +7,19 @@ using UnityEngine;
 public class SightTower : Sight
 {
     public static SightTower inst;
-    void Awake() => inst = this;
 
     public float view = 1;
-    public TMP_Text name, totDamage, distText, stats;
+    public TMP_Text name, totDamage, distText, stats, upButtText, sellButtText;
     [HideInInspector] public Tower target;
+    public Color colorUpButtDesable;
+    Color colorUpButt;
 
 
+    void Awake()
+    {
+        colorUpButt = upButtText.color;
+        inst = this;
+    }
 
     void Update()
     {
@@ -54,6 +60,14 @@ public class SightTower : Sight
             name.text = target.name + "  " + (target.v+1) + "." + target.vsub;
             totDamage.text = "Tot Damage : " + target.totDamage;
             distText.text = Math.Round(distTarget, 2) + " m";
+            stats.text = target.stats;
+
+            upButtText.text = "[ UP:"+ target.upCost + "€ ]";
+            if (target.upCost < Shop.inst.money)
+                 upButtText.color = colorUpButt;
+            else upButtText.color = colorUpButtDesable;
+
+            sellButtText.text = "[ SELL:" + (int)(Tower.COEF_SELL * target.cost) + "€ ]";
 
             if (!display.active)
             {
@@ -77,6 +91,13 @@ public class SightTower : Sight
 
 
     public void UpTower() {
-        if (target) target.Up();
+        if (target && Shop.inst.money >= target.upCost) target.Up();
+    }
+
+    public void SellTower() {
+        if (target) {
+            Shop.inst.AddMoney((int)(Tower.COEF_SELL * target.cost));
+            Destroy(target.gameObject);
+        }
     }
 }

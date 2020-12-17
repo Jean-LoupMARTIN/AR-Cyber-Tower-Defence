@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+
 using UnityEngine;
 
 public abstract class TowerShot<T> : TowerLook where T : Projectil

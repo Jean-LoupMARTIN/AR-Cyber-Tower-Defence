@@ -53,7 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lightening Gun
   cost: 350
-  view: 0.7
   hologram: {fileID: 372323672271259145}
   smoothTranslate: {fileID: 575171294073669409}
   gravity: {fileID: 2269246554959994214}
@@ -64,13 +63,15 @@ MonoBehaviour:
   upgradeParticle: {fileID: 4680045331856669961}
   v: 0
   vsub: 0
+  upCost: 0
   totDamage: 0
+  stats: 
   forceField: {fileID: 3449283341306046235, guid: 7e9e586a109ad404d8551c803b1be098,
     type: 3}
   forceFieldSound: {fileID: 6319545852640742398}
-  dt_shot: 1.4
-  damage: 50
-  ray: 1
+  dt_shot: 1.5
+  damage: 30
+  ray: 0.5
   firePoint: {fileID: 4465568056291698442}
 --- !u!114 &575171294073669409
 MonoBehaviour:
@@ -877,6 +878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3197527295930356701}
+  - component: {fileID: 3579503806015293702}
   m_Layer: 0
   m_Name: InnerBlades
   m_TagString: Untagged
@@ -902,6 +904,25 @@ Transform:
   m_Father: {fileID: 3197093766124892251}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3579503806015293702
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193969842266318423}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84675e2b2c77d427ea5020a53e8df10b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3194217256099186861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3197273496797622739}
+  - component: {fileID: 4756585717729867302}
   m_Layer: 0
   m_Name: OuterBlades
   m_TagString: Untagged
@@ -1410,6 +1432,25 @@ Transform:
   m_Father: {fileID: 3197093766124892251}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4756585717729867302
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194689587359597945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b833ec5bb10704234b6ef23438aa78c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3194822380999619417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4494790605239453287}
+  - component: {fileID: 5871534879233038936}
   m_Layer: 0
   m_Name: InnerBlades
   m_TagString: Untagged
@@ -1728,6 +1770,25 @@ Transform:
   m_Father: {fileID: 4494786565274208595}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5871534879233038936
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4500088364461479007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84675e2b2c77d427ea5020a53e8df10b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4500227465979039547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4503306599965939571}
+  - component: {fileID: 8977147292230670935}
   m_Layer: 0
   m_Name: OuterBlades
   m_TagString: Untagged
@@ -1934,6 +1996,25 @@ Transform:
   m_Father: {fileID: 4494786565274208595}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8977147292230670935
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4500485527265910787}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b833ec5bb10704234b6ef23438aa78c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4500572709593942491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,6 +2783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4616609157577646053}
+  - component: {fileID: 5840156069269177494}
   m_Layer: 0
   m_Name: OuterBlades
   m_TagString: Untagged
@@ -2717,7 +2799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4613012352537704611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.332, z: 3.5527137e-15}
+  m_LocalPosition: {x: 0, y: 1.332, z: 3.552714e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4616724384623910667}
@@ -2725,6 +2807,25 @@ Transform:
   m_Father: {fileID: 4616588593210855689}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5840156069269177494
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613012352537704611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b833ec5bb10704234b6ef23438aa78c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4613066671948072583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,6 +2914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4616103841384764901}
+  - component: {fileID: 6442576008495473250}
   m_Layer: 0
   m_Name: InnerBlades
   m_TagString: Untagged
@@ -2836,6 +2938,25 @@ Transform:
   m_Father: {fileID: 4616588593210855689}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6442576008495473250
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613138742465196681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84675e2b2c77d427ea5020a53e8df10b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4613342372562643647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,6 +3063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7056954973311849758}
+  - component: {fileID: 2014762801131115880}
   m_Layer: 0
   m_Name: OuterBlades
   m_TagString: Untagged
@@ -2965,6 +3087,25 @@ Transform:
   m_Father: {fileID: 2470537047705783409}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2014762801131115880
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465356579656290575}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b833ec5bb10704234b6ef23438aa78c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7864865187925902013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,6 +3115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3708353384412693576}
+  - component: {fileID: 7345512715478500507}
   m_Layer: 0
   m_Name: InnerBlades
   m_TagString: Untagged
@@ -2997,6 +3139,25 @@ Transform:
   m_Father: {fileID: 2470537047705783409}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7345512715478500507
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864865187925902013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84675e2b2c77d427ea5020a53e8df10b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8415097073787257744
 GameObject:
   m_ObjectHideFlags: 0

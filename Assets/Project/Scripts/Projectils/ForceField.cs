@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+
 using UnityEngine;
 
 public class ForceField : MonoBehaviour
@@ -11,6 +11,7 @@ public class ForceField : MonoBehaviour
     Material mat;
     public Color color;
     public float startIntensity = 5, endIntensity = 0;
+    public ParticleSystem impact;
 
     [HideInInspector] public Tower tower;
 
@@ -26,8 +27,8 @@ public class ForceField : MonoBehaviour
     {
         float progress = Tool.Progress(crtLife, life);
 
-        float ray = rayCurve.Evaluate(progress);
-        transform.localScale = Vector3.one * ray;
+        float ray = rayCurve.Evaluate(progress) * rayMax;
+        transform.localScale = Vector3.one * ray * 2;
 
         progress = Tool.Progress(ray, rayMax);
         float intensity = endIntensity + (startIntensity - endIntensity) * (1 - progress);
@@ -45,7 +46,17 @@ public class ForceField : MonoBehaviour
         Transform parent = other.transform.parent;
         if (parent) {
             Enemy enemy = parent.GetComponent<Enemy>();
-            if (enemy) enemy.TakeDamage(damage, tower);
+            if (enemy)
+            {
+                enemy.TakeDamage(damage, tower);
+                Destroy(
+                    Instantiate(
+                        impact,
+                        other.ClosestPoint(transform.position),
+                        Quaternion.LookRotation(Tool.Dir(this, other.transform))
+                    ).gameObject
+               , 1);
+            }
         }
     }
 }

@@ -2694,7 +2694,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rocket Launcher
   cost: 900
-  view: 1.5
   hologram: {fileID: 8429751826813020132}
   smoothTranslate: {fileID: 4211195258484637315}
   gravity: {fileID: 2572203582189161989}
@@ -2705,9 +2704,12 @@ MonoBehaviour:
   upgradeParticle: {fileID: 6962844254424386470}
   v: 0
   vsub: 0
+  upCost: 0
   totDamage: 0
+  stats: 
+  view: 1.3
   rotSpeed: 2.5
-  viewAngle: 30
+  viewAngle: 50
   rotsY:
   - {fileID: 1828278109318914116}
   - {fileID: 4037701110620903695}
@@ -2720,13 +2722,14 @@ MonoBehaviour:
   - {fileID: 1828075007583857438}
   - {fileID: 4037981813879512895}
   - {fileID: 1420065237097993918}
-  dtShot: 0.4
+  dtShot: 0.5
   damageProj: 30
   projectil: {fileID: 728500691673900008, guid: 650cec4cead7f4b80a08734fd247fd02,
     type: 3}
   shotParticle: {fileID: 64592909447337373, guid: 087a82f8f5ba14f019fbb41bfc37d18f,
     type: 3}
   animator: {fileID: 511517258581673383}
+  rocketView: 0.51
 --- !u!1001 &3308074209903152712
 PrefabInstance:
   m_ObjectHideFlags: 0

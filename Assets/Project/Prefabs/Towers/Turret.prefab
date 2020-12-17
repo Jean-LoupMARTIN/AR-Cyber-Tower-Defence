@@ -1203,7 +1203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Turret
   cost: 200
-  view: 1.5
   hologram: {fileID: 6756937944197752864}
   smoothTranslate: {fileID: 3136704946041297101}
   gravity: {fileID: 4535693455212345527}
@@ -1214,9 +1213,13 @@ MonoBehaviour:
   upgradeParticle: {fileID: 2096751111756224987}
   v: 0
   vsub: 0
+  upCost: 0
   totDamage: 0
-  rotSpeed: 5
+  stats: 
+  view: 1.2
+  rotSpeed: 6
   viewAngle: 5
+  anticipation: 0.2
   rotsY:
   - {fileID: 4031912991203858582}
   - {fileID: 7990208393089142845}
@@ -1229,7 +1232,7 @@ MonoBehaviour:
   - {fileID: 4748030848632975799}
   - {fileID: 2096773087444718411}
   - {fileID: 1652491482776564746}
-  dtShot: 0.25
+  dtShot: 0.3
   damageProj: 10
   projectil: {fileID: 2986368481846071488, guid: b7094a45d8f1c4148b9e15fbd0839f8c,
     type: 3}

@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   life: 1.2
+  rayMax: 1
   rayCurve:
     serializedVersion: 2
     m_Curve:
@@ -189,3 +190,5 @@ MonoBehaviour:
   color: {r: 0.25943398, g: 0.74443215, b: 1, a: 0}
   startIntensity: 3.5
   endIntensity: 0
+  impact: {fileID: 7180223941676830423, guid: d646a1cda6b624dff83c8b3ef4b6c31b, type: 3}
+  tower: {fileID: 0}

@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320758105109948962}
   m_LocalRotation: {x: -0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.424}
+  m_LocalPosition: {x: 0, y: 0, z: 1.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3774290973760128618}
@@ -416,7 +416,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rail Gun
   cost: 1500
-  view: 1.5
   hologram: {fileID: 8581928845323274294}
   smoothTranslate: {fileID: 3761118566220174691}
   gravity: {fileID: 1053230366977798817}
@@ -427,9 +426,13 @@ MonoBehaviour:
   upgradeParticle: {fileID: 3849714301179366330}
   v: 0
   vsub: 0
+  upCost: 0
   totDamage: 0
+  stats: 
+  view: 1.3
   rotSpeed: 8
   viewAngle: 3
+  anticipation: 0.5
   rotsY:
   - {fileID: 3015162392223880208}
   - {fileID: 7548475938392445812}
@@ -442,7 +445,7 @@ MonoBehaviour:
   - {fileID: 4707306677928346347}
   - {fileID: 3981637459171956039}
   - {fileID: 1669871433549230864}
-  attDamage: 1
+  attDamage: 2
   atts:
   - {fileID: 442691427613312932}
   - {fileID: 6902400709250643012}
@@ -2307,7 +2310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9178433497733436740}
   m_LocalRotation: {x: -0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.084}
+  m_LocalPosition: {x: 0, y: 0, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8735341753956785246}
@@ -2326,6 +2329,21 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2599591852578485797, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
         type: 3}
       propertyPath: m_Name
@@ -2339,12 +2357,12 @@ PrefabInstance:
     - target: {fileID: 3645098958433743049, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3645098958433743049, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 3645098958433743049, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
         type: 3}
@@ -2411,6 +2429,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2599591852578485797, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
         type: 3}
@@ -2497,6 +2530,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469745661315668179, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2599591852578485797, guid: d836e42c0116d4bb2af2f49b11b9dcd8,
         type: 3}

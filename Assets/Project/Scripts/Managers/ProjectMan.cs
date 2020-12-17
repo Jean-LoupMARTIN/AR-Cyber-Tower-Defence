@@ -23,7 +23,6 @@ public class ProjectMan : MonoBehaviour
     public GameObject AR, NAR;
     public Camera ARcam, NARcam;
     [HideInInspector] public Camera cam;
-    //public Canvas canvas;
 
 
     void Awake()
@@ -40,7 +39,8 @@ public class ProjectMan : MonoBehaviour
         NAR.SetActive(test);
         if (test) cam = NARcam;
         else      cam = ARcam;
-
-        //canvas.worldCamera = cam;
     }
+
+
+    public void setTime(int t) => Time.timeScale = t;
 }
