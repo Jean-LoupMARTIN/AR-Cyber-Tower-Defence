@@ -1,7 +1,6 @@
 ﻿
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 public class ProjectMan : MonoBehaviour
 {
@@ -43,4 +42,12 @@ public class ProjectMan : MonoBehaviour
 
 
     public void setTime(int t) => Time.timeScale = t;
+
+    public void Reload()
+    {
+        setTime(1);
+        Enemy.enemies.Clear();
+        Tower.towers.Clear();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

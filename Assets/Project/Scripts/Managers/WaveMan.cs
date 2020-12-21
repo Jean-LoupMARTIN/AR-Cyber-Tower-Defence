@@ -10,7 +10,8 @@ public class WaveMan : MonoBehaviour
 
 
     public List<Enemy> enemiesPrefabs;
-    int countEnemy;
+    public float moneyTotEnemies = 100, coefCost = 1.3f;
+    float crtMoneyEnemies;
     public float dtEnemy = 0.3f;
     float tNextEnemy;
 
@@ -29,21 +30,34 @@ public class WaveMan : MonoBehaviour
     void Update()
     {
         if (inWave) {
-            if (countEnemy > 0) {
+            if (crtMoneyEnemies != 0) {
                 if (Time.time > tNextEnemy) {
-                    tNextEnemy += dtEnemy;
-                    countEnemy--;
-                    SpawnEnemy();
+
+                    List<Enemy> enemiesAvailable = new List<Enemy>();
+                    foreach (Enemy e in enemiesPrefabs)
+                        if ((e == enemiesPrefabs[0] && e.money <= crtMoneyEnemies) ||
+                            (e != enemiesPrefabs[0] && e.money <= crtMoneyEnemies / 2))
+                            enemiesAvailable.Add(e);
+
+                    if (enemiesAvailable.Count == 0)
+                        crtMoneyEnemies = 0;
+
+                    else {
+                        tNextEnemy += dtEnemy;
+                        Enemy enemyPrefab = Tool.Rand(enemiesAvailable);
+                        crtMoneyEnemies -= enemyPrefab.money;
+                        SpawnEnemy(enemyPrefab);
+                    }
                 }
             }
-            else if (Enemy.enemies.Count == 0)
+
+            else if (Enemy.enemies.Count == 0 && crtMoneyEnemies == 0)
                 EndWave();
         }
     }
 
-    void SpawnEnemy() {
-        Enemy prefab = Tool.Rand(enemiesPrefabs);
-        Enemy enemy = Instantiate(prefab, Base.inst.gravity.position, Quaternion.identity);
+    void SpawnEnemy(Enemy enemyPrefab) {
+        Enemy enemy = Instantiate(enemyPrefab, Base.inst.gravity.position, Quaternion.identity);
         float oy = Tool.Rand(360);
         float ox = Random.Range(-5, 5);
         enemy.transform.Rotate(ox,oy,0);
@@ -52,7 +66,7 @@ public class WaveMan : MonoBehaviour
 
     public void StartWave()
     {
-        countEnemy =  2 * wave;
+        crtMoneyEnemies = moneyTotEnemies;
         tNextEnemy = Time.time;
 
         inWave = true;
@@ -62,6 +76,7 @@ public class WaveMan : MonoBehaviour
     public void EndWave()
     {
         wave++;
+        moneyTotEnemies *= coefCost;
         waveInfo.text = "Wave " + wave;
         waveNumber.text = wave.ToString();
         inWave = false;

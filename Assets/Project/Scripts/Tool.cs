@@ -68,8 +68,6 @@ public static class Tool
     // MATH
     public static float Progress(float t, float max) { return t / max; }
 
-
-
     public static T Last<T>(T[] list) { return list[list.Length - 1]; }
     public static T Last<T>(List<T> list) { return list[list.Count - 1]; }
 

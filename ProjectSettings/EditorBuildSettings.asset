@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/FirstMenu.unity
-    guid: 02d69e1b4d55f4af5a4b793de4f1122b
-  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/FirstMenu.unity
+    guid: 02d69e1b4d55f4af5a4b793de4f1122b
   m_configObjects:
     com.unity.xr.management.arcore_loader: {fileID: 11400000, guid: 26439aa205aff496888c881de61bcdc5,
       type: 2}
