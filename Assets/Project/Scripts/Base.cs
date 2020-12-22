@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Base : MonoBehaviour
 {
@@ -10,14 +11,16 @@ public class Base : MonoBehaviour
     public Hologram hologram;
     public Transform gravity;
     public RectTransform lifeRT;
-    public TMP_Text lifePercent;
+    public TMP_Text lifePercent, scoreDead;
     public Animator bloodyScreen;
     public GameObject exploPrefab, scale;
+
+    public UnityEvent deadEvent;
 
     public float view = 2;
     public int life;
     float crtLife;
-    bool died = false;
+    [HideInInspector] public bool died = false;
 
     void Awake()
     {
@@ -43,9 +46,12 @@ public class Base : MonoBehaviour
     void Die() {
         died = true;
         StartCoroutine(Explose());
-        
+
         //Decompose(scale.transform);
         //Destroy(scale);
+
+        scoreDead.text = "Score : " + WaveMan.inst.wave;
+        deadEvent.Invoke();
     }
 
     void Decompose(Transform trans) {

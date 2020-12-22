@@ -48,6 +48,10 @@ public class ProjectMan : MonoBehaviour
         setTime(1);
         Enemy.enemies.Clear();
         Tower.towers.Clear();
+        WaveMan.inWave = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Quit() => Application.Quit();
+
 }

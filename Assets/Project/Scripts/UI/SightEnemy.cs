@@ -20,7 +20,7 @@ public class SightEnemy : Sight
         Vector3 screenPointTarget = Vector3.zero;
         Camera cam = ProjectMan.inst.cam;
 
-        if (WaveMan.inWave) {
+        if (WaveMan.inWave && !Base.inst.died) {
             foreach (Enemy e in Enemy.enemies)
             {
                 Vector3 screenPoint = cam.WorldToScreenPoint(e.gravity.position);

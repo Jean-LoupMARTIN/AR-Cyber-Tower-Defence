@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class WaveMan : MonoBehaviour
 {
@@ -18,14 +19,13 @@ public class WaveMan : MonoBehaviour
     public TMP_Text waveInfo, waveNumber;
     public UnityEvent startWaveEvent, endWaveEvent;
     public static bool inWave = false;
-    int wave = 1;
+    [HideInInspector] public int wave = 1;
 
     void Awake()
     {
         inst = this;
     }
 
-    
 
     void Update()
     {
@@ -51,12 +51,13 @@ public class WaveMan : MonoBehaviour
                 }
             }
 
-            else if (Enemy.enemies.Count == 0 && crtMoneyEnemies == 0)
+            else if (Enemy.enemies.Count == 0 && crtMoneyEnemies == 0 && !Base.inst.died)
                 EndWave();
         }
     }
 
-    void SpawnEnemy(Enemy enemyPrefab) {
+    void SpawnEnemy(Enemy enemyPrefab)
+    {
         Enemy enemy = Instantiate(enemyPrefab, Base.inst.gravity.position, Quaternion.identity);
         float oy = Tool.Rand(360);
         float ox = Random.Range(-5, 5);

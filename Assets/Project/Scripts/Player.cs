@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     {
         UpdateOverload();
 
-        if (WaveMan.inWave) {
+        if (WaveMan.inWave && !Base.inst.died) {
             if (Input.GetMouseButton(0) && !reload && Time.time > tNextShot) {
                 tNextShot = Time.time + tShot;
                 overload += overloadShot;
